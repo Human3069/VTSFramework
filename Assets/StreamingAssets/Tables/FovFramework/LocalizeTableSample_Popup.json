@@ -1,0 +1,65 @@
+[
+	{
+		"Table_Id": 0,
+		"Korean_String": "정말 종료하시겠습니까?",
+		"English_String": "Are You Sure Exit?"
+	}, 
+	{
+		"Table_Id": 1,
+		"Korean_String": "예",
+		"English_String": "Yes"
+	}, 
+	{
+		"Table_Id": 2,
+		"Korean_String": "아니오",
+		"English_String": "No"
+	}, 
+	{
+		"Table_Id": 10,
+		"Korean_String": "팝업 A 제목 - 1",
+		"English_String": "Popup A Title - 1"
+	}, 
+	{
+		"Table_Id": 11,
+		"Korean_String": "팝업 A 제목 - 2",
+		"English_String": "Popup A Title - 2"
+	}, 
+	{
+		"Table_Id": 12,
+		"Korean_String": "팝업 B 제목",
+		"English_String": "Popup B Title"
+	}, 
+	{
+		"Table_Id": 13,
+		"Korean_String": "팝업 C 제목",
+		"English_String": "Popup C Title"
+	}, 
+	{
+		"Table_Id": 14,
+		"Korean_String": "팝업 A 내용 - 1 이다.
+ 팝업 A",
+		"English_String": "Popup A - 1 Content
+ It's Popup A"
+	}, 
+	{
+		"Table_Id": 15,
+		"Korean_String": "팝업 A 내용 - 2 이다.
+ 팝업 A",
+		"English_String": "Popup A - 2 Content
+ It's Popup A"
+	}, 
+	{
+		"Table_Id": 16,
+		"Korean_String": "팝업 B 내용이다.
+ 팝업 B",
+		"English_String": "Popup B Content
+ It's Popup B"
+	}, 
+	{
+		"Table_Id": 17,
+		"Korean_String": "팝업 C 내용이다.
+ 팝업 C",
+		"English_String": "Popup C Content
+ It's Popup C"
+	} 
+]

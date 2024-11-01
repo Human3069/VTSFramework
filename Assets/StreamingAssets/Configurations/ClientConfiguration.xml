@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ClientConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<UseCheat>TRUE</UseCheat>
+	<ClientVersion>Ver. 3.1</ClientVersion>
+
+	<DelayBetweenStep>0.5</DelayBetweenStep>
+	<MaxInteractableDistance>50</MaxInteractableDistance>
+	<RaycastAll>TRUE</RaycastAll>
+	
+</ClientConfiguration>

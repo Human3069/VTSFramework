@@ -1,0 +1,39 @@
+[
+	{
+		"Popup_Uid": "ui_popup_visionguide_a_0",
+		"Popup_Config": "config_a",
+		"Popup_Size": "600 x 400",
+		"Popup_Pos": "0x0",
+		"Toolbar_Direct": "text : 10",
+		"Content_Direct": "text : 14",
+		"Bottombar_Direct": "button : 1 => OnClickVisionGuide_A_0_Popup_1_Button &
+button : 2 => OnClickVisionGuide_A_0_Popup_2_Button"
+	}, 
+	{
+		"Popup_Uid": "ui_popup_visionguide_a_1",
+		"Popup_Config": "config_a",
+		"Popup_Size": "700x500",
+		"Popup_Pos": "50 X 0",
+		"Toolbar_Direct": "text : 11",
+		"Content_Direct": "image : Sample",
+		"Bottombar_Direct": "button : 1 => OnClickVisionGuide_A_1_Popup_1_Button &
+button : 2 => OnClickVisionGuide_A_1_Popup_2_Button"
+	}, 
+	{
+		"Popup_Uid": "ui_popup_visionguide_b",
+		"Popup_Config": "config_b",
+		"Popup_Size": "600  X  450",
+		"Popup_Pos": "0x150",
+		"Toolbar_Direct": "text : 12",
+		"Content_Direct": "text : 16 &
+image : Sample",
+		"Bottombar_Direct": "button : 1 => OnClickVisionGuide_B_Popup_1_Button"
+	}, 
+	{
+		"Popup_Uid": "ui_popup_visionguide_c",
+		"Popup_Config": "config_b",
+		"Popup_Size": "750x500",
+		"Popup_Pos": "-50    x    100",
+		"Content_Direct": "text : 17"
+	} 
+]

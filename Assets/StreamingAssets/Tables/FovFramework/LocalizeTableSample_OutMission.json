@@ -1,0 +1,54 @@
+[
+	{
+		"Table_Id": 0,
+		"Korean_String": "정말 종료하시겠습니까?",
+		"English_String": "Are You Sure Exit?"
+	}, 
+	{
+		"Table_Id": 1,
+		"Korean_String": "예",
+		"English_String": "Yes"
+	}, 
+	{
+		"Table_Id": 2,
+		"Korean_String": "아니오",
+		"English_String": "No"
+	}, 
+	{
+		"Table_Id": 3,
+		"Korean_String": "언어를 선택하세요",
+		"English_String": "Select Your Language"
+	}, 
+	{
+		"Table_Id": 4,
+		"Korean_String": "설비를 선택하세요",
+		"English_String": "Select Your Machine"
+	}, 
+	{
+		"Table_Id": 5,
+		"Korean_String": "미션을 선택하세요",
+		"English_String": "Select Your Mission"
+	}, 
+	{
+		"Table_Id": 6,
+		"Korean_String": "시나리오가 종료되었습니다.
+ 확인버튼을 눌러 메인 메뉴로 나가세요",
+		"English_String": "Scenario Finished.
+ Press 'Yes' to go to Main Menu"
+	}, 
+	{
+		"Table_Id": 7,
+		"Korean_String": "공정 설비 가이드",
+		"English_String": "Process Equipment Guide"
+	}, 
+	{
+		"Table_Id": 8,
+		"Korean_String": "비전 가이드",
+		"English_String": "Vision Guide"
+	}, 
+	{
+		"Table_Id": 9,
+		"Korean_String": "한국어",
+		"English_String": "English"
+	} 
+]

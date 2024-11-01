@@ -1,0 +1,533 @@
+[
+	{
+		"Mission_Type": "M_0_0",
+		"Record_Point": "o",
+		"First_Index": 0,
+		"Second_Index": 0,
+		"Localize_Table_Id": 0,
+		"Direct": "Move",
+		"Uid": "path_whole"
+	}, 
+	{
+		"Mission_Type": "M_0_0",
+		"First_Index": 0,
+		"Second_Index": 0,
+		"Localize_Table_Id": 0,
+		"Direct": "hl",
+		"Uid": "2d_hl_0",
+		"Parameter": 3
+	}, 
+	{
+		"Mission_Type": "M_0_0",
+		"First_Index": 0,
+		"Second_Index": 0,
+		"Localize_Table_Id": 0,
+		"Direct": "hl",
+		"Uid": "2d_hl_1",
+		"Parameter": 0
+	}, 
+	{
+		"Mission_Type": "M_0_0",
+		"Record_Point": "o",
+		"First_Index": 1,
+		"Second_Index": 0,
+		"Localize_Table_Id": 1,
+		"Direct": "Move",
+		"Uid": "path_topview"
+	}, 
+	{
+		"Mission_Type": "M_0_0",
+		"First_Index": 1,
+		"Second_Index": 0,
+		"Localize_Table_Id": 1,
+		"Direct": "hl",
+		"Uid": "LevelGeometry",
+		"Parameter": 0
+	}, 
+	{
+		"Mission_Type": "M_0_0",
+		"Record_Point": "o",
+		"First_Index": 2,
+		"Second_Index": 0,
+		"Localize_Table_Id": 2,
+		"Direct": "HL manual",
+		"Uid": "sm_sector_01",
+		"Parameter": "on"
+	}, 
+	{
+		"Mission_Type": "M_0_0",
+		"First_Index": 2,
+		"Second_Index": 1,
+		"Localize_Table_Id": 2,
+		"Direct": "delay",
+		"Parameter": 1
+	}, 
+	{
+		"Mission_Type": "M_0_0",
+		"First_Index": 2,
+		"Second_Index": 2,
+		"Localize_Table_Id": 2,
+		"Direct": "Hl",
+		"Uid": "sm_sector_04"
+	}, 
+	{
+		"Mission_Type": "M_0_0",
+		"Record_Point": "o",
+		"First_Index": 3,
+		"Second_Index": 0,
+		"Localize_Table_Id": 3,
+		"Direct": "HL manual",
+		"Uid": "sm_sector_01",
+		"Parameter": "off"
+	}, 
+	{
+		"Mission_Type": "M_0_0",
+		"First_Index": 3,
+		"Second_Index": 1,
+		"Localize_Table_Id": 3,
+		"Direct": "hL",
+		"Uid": "sm_sector_02"
+	}, 
+	{
+		"Mission_Type": "M_0_0",
+		"Record_Point": "o",
+		"First_Index": 4,
+		"Second_Index": 0,
+		"Localize_Table_Id": 4,
+		"Direct": "H L",
+		"Uid": "sm_sector_03",
+		"Parameter": 0
+	}, 
+	{
+		"Mission_Type": "M_0_0",
+		"Record_Point": "o",
+		"First_Index": 5,
+		"Second_Index": 0,
+		"Localize_Table_Id": 5,
+		"Direct": "H L",
+		"Uid": "sm_sector_04",
+		"Parameter": 0
+	}, 
+	{
+		"Mission_Type": "M_0_1",
+		"Record_Point": "o",
+		"First_Index": 0,
+		"Second_Index": 0,
+		"Localize_Table_Id": 100,
+		"Direct": "Move",
+		"Uid": "point_whole",
+		"Parameter": "Immediately,
+Fade In Out"
+	}, 
+	{
+		"Mission_Type": "M_0_1",
+		"First_Index": 0,
+		"Second_Index": 1,
+		"Localize_Table_Id": 100,
+		"Direct": "Fade",
+		"Parameter": "Out"
+	}, 
+	{
+		"Mission_Type": "M_0_1",
+		"First_Index": 0,
+		"Second_Index": 2,
+		"Localize_Table_Id": 100,
+		"Direct": "Delay",
+		"Parameter": 1
+	}, 
+	{
+		"Mission_Type": "M_0_1",
+		"First_Index": 0,
+		"Second_Index": 3,
+		"Localize_Table_Id": 100,
+		"Direct": "Fade",
+		"Parameter": "In"
+	}, 
+	{
+		"Mission_Type": "M_0_1",
+		"Record_Point": "o",
+		"First_Index": 0,
+		"Second_Index": 4,
+		"Localize_Table_Id": 101,
+		"Direct": "Move",
+		"Uid": "point_close_in_0"
+	}, 
+	{
+		"Mission_Type": "M_0_1",
+		"First_Index": 0,
+		"Second_Index": 5,
+		"Localize_Table_Id": 101,
+		"Direct": "Delay",
+		"Parameter": 1
+	}, 
+	{
+		"Mission_Type": "M_0_1",
+		"First_Index": 0,
+		"Second_Index": 6,
+		"Localize_Table_Id": 101,
+		"Direct": "Move",
+		"Uid": "point_close_in_1",
+		"Parameter": "Immediately"
+	}, 
+	{
+		"Mission_Type": "M_0_1",
+		"Record_Point": "o",
+		"First_Index": 1,
+		"Second_Index": 0,
+		"Localize_Table_Id": 102,
+		"Direct": "POPUP",
+		"Uid": "ui_popup_visionguide_a_0"
+	}, 
+	{
+		"Mission_Type": "M_0_1",
+		"Record_Point": "o",
+		"First_Index": 2,
+		"Second_Index": 0,
+		"Localize_Table_Id": 103,
+		"Direct": "POPUP",
+		"Uid": "ui_popup_visionguide_a_1"
+	}, 
+	{
+		"Mission_Type": "M_0_1",
+		"Record_Point": "o",
+		"First_Index": 3,
+		"Second_Index": 0,
+		"Localize_Table_Id": 104,
+		"Direct": "POPUP auto",
+		"Uid": "ui_popup_visionguide_b"
+	}, 
+	{
+		"Mission_Type": "M_0_1",
+		"Record_Point": "o",
+		"First_Index": 4,
+		"Second_Index": 0,
+		"Localize_Table_Id": 105,
+		"Direct": "POPUP manual",
+		"Uid": "ui_popup_visionguide_c",
+		"Parameter": "on"
+	}, 
+	{
+		"Mission_Type": "M_0_1",
+		"Record_Point": "o",
+		"First_Index": 5,
+		"Second_Index": 0,
+		"Localize_Table_Id": 106,
+		"Direct": "Delay",
+		"Parameter": 1
+	}, 
+	{
+		"Mission_Type": "M_0_1",
+		"Record_Point": "o",
+		"First_Index": 6,
+		"Second_Index": 0,
+		"Localize_Table_Id": 107,
+		"Direct": "Delay",
+		"Parameter": 1
+	}, 
+	{
+		"Mission_Type": "M_0_1",
+		"First_Index": 6,
+		"Second_Index": 1,
+		"Localize_Table_Id": 107,
+		"Direct": "POPUP manual",
+		"Uid": "ui_popup_visionguide_c",
+		"Parameter": "off"
+	}, 
+	{
+		"Mission_Type": "M_0_1",
+		"Record_Point": "o",
+		"First_Index": 7,
+		"Second_Index": 0,
+		"Localize_Table_Id": 108,
+		"Direct": "Move",
+		"Uid": "point_front_of_hmi",
+		"Parameter": "default"
+	}, 
+	{
+		"Mission_Type": "M_0_1",
+		"First_Index": 7,
+		"Second_Index": 1,
+		"Localize_Table_Id": 109,
+		"Direct": "HL & INT",
+		"Uid": "toggle_hmi_0"
+	}, 
+	{
+		"Mission_Type": "M_0_1",
+		"First_Index": 7,
+		"Second_Index": 1,
+		"Localize_Table_Id": 109,
+		"Direct": "HL & INT",
+		"Uid": "toggle_hmi_1"
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"First_Index": 0,
+		"Second_Index": 0,
+		"Localize_Table_Id": 200,
+		"Direct": "Delay",
+		"Parameter": 1
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"Record_Point": "o",
+		"First_Index": 1,
+		"Second_Index": 0,
+		"Localize_Table_Id": 201,
+		"Direct": "Move",
+		"Uid": "point_front_of_interactions",
+		"Parameter": "default"
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"First_Index": 1,
+		"Second_Index": 0,
+		"Localize_Table_Id": 201,
+		"Direct": "HL & INT",
+		"Uid": "3d_b0"
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"First_Index": 1,
+		"Second_Index": 0,
+		"Localize_Table_Id": 201,
+		"Direct": "HL & INT",
+		"Uid": "3d_b1"
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"First_Index": 1,
+		"Second_Index": 0,
+		"Localize_Table_Id": 201,
+		"Direct": "HL & INT",
+		"Uid": "3d_db0"
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"First_Index": 1,
+		"Second_Index": 0,
+		"Localize_Table_Id": 201,
+		"Direct": "HL & INT",
+		"Uid": "3d_db1"
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"First_Index": 1,
+		"Second_Index": 0,
+		"Localize_Table_Id": 201,
+		"Direct": "HL & INT",
+		"Uid": "3d_db2"
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"Record_Point": "o",
+		"First_Index": 1,
+		"Second_Index": 1,
+		"Localize_Table_Id": 202,
+		"Direct": "HL & INT",
+		"Uid": "3d_t0"
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"First_Index": 1,
+		"Second_Index": 1,
+		"Localize_Table_Id": 202,
+		"Direct": "HL & INT",
+		"Uid": "3d_t1"
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"Record_Point": "o",
+		"First_Index": 1,
+		"Second_Index": 2,
+		"Localize_Table_Id": 203,
+		"Direct": "HL & INT",
+		"Uid": "3d_r0"
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"First_Index": 1,
+		"Second_Index": 2,
+		"Localize_Table_Id": 203,
+		"Direct": "HL & INT",
+		"Uid": "3d_r1"
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"Record_Point": "o",
+		"First_Index": 1,
+		"Second_Index": 3,
+		"Localize_Table_Id": 204,
+		"Direct": "HL & INT",
+		"Uid": "3d_s0",
+		"Target_Value": 1
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"First_Index": 1,
+		"Second_Index": 3,
+		"Localize_Table_Id": 204,
+		"Direct": "HL & INT",
+		"Uid": "3d_s1",
+		"Target_Value": 0
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"Record_Point": "o",
+		"First_Index": 2,
+		"Second_Index": 0,
+		"Localize_Table_Id": 205,
+		"Direct": "HL & INT",
+		"Uid": "3d_k0",
+		"Target_Value": 1
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"First_Index": 2,
+		"Second_Index": 0,
+		"Localize_Table_Id": 205,
+		"Direct": "HL & INT",
+		"Uid": "3d_k1",
+		"Target_Value": 0
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"Record_Point": "o",
+		"First_Index": 2,
+		"Second_Index": 1,
+		"Localize_Table_Id": 206,
+		"Direct": "HL & INT",
+		"Uid": "3d_k2",
+		"Target_Value": 3
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"First_Index": 2,
+		"Second_Index": 1,
+		"Localize_Table_Id": 206,
+		"Direct": "HL & INT",
+		"Uid": "3d_k3",
+		"Target_Value": -3
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"Record_Point": "o",
+		"First_Index": 2,
+		"Second_Index": 2,
+		"Localize_Table_Id": 207,
+		"Direct": "HL & INT",
+		"Uid": "3d_k4",
+		"Target_Value": 90
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"First_Index": 2,
+		"Second_Index": 2,
+		"Localize_Table_Id": 207,
+		"Direct": "HL & INT",
+		"Uid": "3d_k5",
+		"Target_Value": 180
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"Record_Point": "o",
+		"First_Index": 3,
+		"Second_Index": 0,
+		"Localize_Table_Id": 208,
+		"Direct": "hl manual",
+		"Uid": "2d_hl_0",
+		"Parameter": "on"
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"First_Index": 3,
+		"Second_Index": 0,
+		"Localize_Table_Id": 208,
+		"Direct": "hl manual",
+		"Uid": "2d_hl_1",
+		"Parameter": "on"
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"First_Index": 3,
+		"Second_Index": 0,
+		"Localize_Table_Id": 208,
+		"Direct": "HL & INT",
+		"Uid": "ui_button_a"
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"First_Index": 3,
+		"Second_Index": 0,
+		"Localize_Table_Id": 208,
+		"Direct": "HL & INT",
+		"Uid": "ui_toggle_a"
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"First_Index": 3,
+		"Second_Index": 0,
+		"Localize_Table_Id": 208,
+		"Direct": "HL & INT",
+		"Uid": "ui_toggle_b"
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"Record_Point": "o",
+		"First_Index": 3,
+		"Second_Index": 1,
+		"Localize_Table_Id": 208,
+		"Direct": "HL & INT",
+		"Uid": "ui_grouped_toggle_a"
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"First_Index": 3,
+		"Second_Index": 1,
+		"Localize_Table_Id": 208,
+		"Direct": "HL & INT",
+		"Uid": "ui_grouped_toggle_b"
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"Record_Point": "o",
+		"First_Index": 3,
+		"Second_Index": 2,
+		"Localize_Table_Id": 208,
+		"Direct": "hl manual",
+		"Uid": "2d_hl_0",
+		"Parameter": "off"
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"First_Index": 3,
+		"Second_Index": 2,
+		"Localize_Table_Id": 208,
+		"Direct": "hl manual",
+		"Uid": "2d_hl_1",
+		"Parameter": "off"
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"First_Index": 3,
+		"Second_Index": 2,
+		"Localize_Table_Id": 208,
+		"Direct": "HL & INT",
+		"Uid": "ui_delaybutton_a"
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"First_Index": 3,
+		"Second_Index": 2,
+		"Localize_Table_Id": 208,
+		"Direct": "HL & INT",
+		"Uid": "ui_delaybutton_b"
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"First_Index": 3,
+		"Second_Index": 2,
+		"Localize_Table_Id": 208,
+		"Direct": "HL & INT",
+		"Uid": "ui_delaybutton_c"
+	} 
+]

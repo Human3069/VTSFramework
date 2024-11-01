@@ -1,0 +1,38 @@
+[
+	{
+		"Uid": "3d_t1",
+		"Orders": "TRUE",
+		"Orders": "FALSE",
+		"Orders": "TRUE"
+	}, 
+	{
+		"Uid": "3d_r1",
+		"Orders": "TRUE",
+		"Orders": "FALSE",
+		"Orders": "TRUE"
+	}, 
+	{
+		"Uid": "3d_s1",
+		"Orders": 1,
+		"Orders": 0.6,
+		"Orders": 0.8
+	}, 
+	{
+		"Uid": "3d_k0",
+		"Orders": 0,
+		"Orders": 0,
+		"Orders": 0
+	}, 
+	{
+		"Uid": "3d_k2",
+		"Orders": 0,
+		"Orders": 0,
+		"Orders": 0
+	}, 
+	{
+		"Uid": "3d_k4",
+		"Orders": 0,
+		"Orders": 0,
+		"Orders": 0
+	} 
+]

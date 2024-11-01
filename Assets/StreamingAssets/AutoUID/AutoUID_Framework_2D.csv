@@ -1,0 +1,7 @@
+﻿index,uid,path,object name,state,detail, old, new
+0,2_auto_AutoMode_Btn,AutoUID_Test_Canvas/Objects/2d_AutoMode_Btn,2d_AutoMode_Btn,New,,, 
+1,2_auto_AutoState_Tgl,AutoUID_Test_Canvas/Objects/2d_AutoState_Tgl,2d_AutoState_Tgl,New,,, 
+2,2_auto_AutoImage,AutoUID_Test_Canvas/Objects/2d_AutoImage,2d_AutoImage,New,,, 
+3,2_dis_copy_AutoMode_Btn,AutoUID_Test_Canvas-Test2/Objects/2d_AutoMode_Btn,2d_AutoMode_Btn,New,,, 
+4,2_dis_copy_AutoState_Tgl,AutoUID_Test_Canvas-Test2/Objects/2d_AutoState_Tgl,2d_AutoState_Tgl,New,,, 
+5,2_dis_copy_AutoImage,AutoUID_Test_Canvas-Test2/Objects/2d_AutoImage,2d_AutoImage,New,,, 

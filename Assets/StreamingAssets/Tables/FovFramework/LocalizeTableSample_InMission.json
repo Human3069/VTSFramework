@@ -1,0 +1,186 @@
+[
+	{
+		"Table_Id": 0,
+		"Korean_String": "공정 설비 가이드 훈련을 시작합니다. 본 훈련에서는 여러가지 설비들에 대한 설명을 진행합니다.",
+		"English_String": "Let's Start Process Equipment Guide Training That Explane of Various Machines"
+	}, 
+	{
+		"Table_Id": 1,
+		"Korean_String": "설비는 ?를 ?하기 위한 공정을 진행하며, ? 과정은 A, B, C, D 순서로 진행됩니다.",
+		"English_String": "Equipments Are To Do ? For ?, ? Process A, B, C, D Proceed In Order"
+	}, 
+	{
+		"Table_Id": 2,
+		"Korean_String": "A 설비와 과정을 확인하겠습니다. A 설비에는 ?, ?, ?가 있으며 ?는 ?를 하는 역할을 합니다",
+		"English_String": "Lets Take a Look for A Process And Equipment . A Equipment Has ?, ?, ?, And ? is To Do For ?"
+	}, 
+	{
+		"Table_Id": 3,
+		"Korean_String": "B 설비와 과정을 확인하겠습니다. B 설비에는 ?, ?, ?가 있으며 ?는 ?를 하는 역할을 합니다",
+		"English_String": "Lets Take a Look for B Process And Equipment . B Equipment Has ?, ?, ?, And ? is To Do For ?"
+	}, 
+	{
+		"Table_Id": 4,
+		"Korean_String": "C 설비와 과정을 확인하겠습니다. C 설비에는 ?, ?, ?가 있으며 ?는 ?를 하는 역할을 합니다",
+		"English_String": "Lets Take a Look for C Process And Equipment . C Equipment Has ?, ?, ?, And ? is To Do For ?"
+	}, 
+	{
+		"Table_Id": 5,
+		"Korean_String": "D 설비와 과정을 확인하겠습니다. D 설비에는 ?, ?, ?가 있으며 ?는 ?를 하는 역할을 합니다",
+		"English_String": "Lets Take a Look for D Process And Equipment . D Equipment Has ?, ?, ?, And ? is To Do For ?"
+	}, 
+	{
+		"Table_Id": 100,
+		"Korean_String": "비전 가이드 훈련을 시작합니다. 본 훈련에서는 자동 및 수동 팝업 (Auto and Manual),
+페이드 인아웃, 카메라 이동, 간단한 인터렉션을 보여줍니다.",
+		"English_String": "Let's Start Vision Guide Training That Shows Plenty of Auto and Manual Popups,
+Fade In-Out, moving of camera, simple Interaction."
+	}, 
+	{
+		"Table_Id": 101,
+		"Korean_String": "Next 버튼을 누르지 않더라도 지금과 같이 하단 텍스트가 바뀔 수 있습니다.",
+		"English_String": "If you not click Next Button below Text can change like this."
+	}, 
+	{
+		"Table_Id": 102,
+		"Korean_String": "팝업 A - 1 입니다.",
+		"English_String": "It's Popup A - 1"
+	}, 
+	{
+		"Table_Id": 103,
+		"Korean_String": "팝업 A - 2 입니다.",
+		"English_String": "It's Popup A - 2"
+	}, 
+	{
+		"Table_Id": 104,
+		"Korean_String": "팝업 B 입니다.",
+		"English_String": "It's Popup B"
+	}, 
+	{
+		"Table_Id": 105,
+		"Korean_String": "팝업 C 입니다.",
+		"English_String": "It's Popup C"
+	}, 
+	{
+		"Table_Id": 106,
+		"Korean_String": "1초 딜레이 하겠습니다",
+		"English_String": "Let's delay 1 second"
+	}, 
+	{
+		"Table_Id": 107,
+		"Korean_String": "팝업 C는 수동(manual) 팝업이라서 Next를 눌러도 꺼지지 않습니다.",
+		"English_String": "Popup C is manual so it doesn't disappear when you clicked Next Button"
+	}, 
+	{
+		"Table_Id": 108,
+		"Korean_String": "카메라 이동중...",
+		"English_String": "Camera is Moving..."
+	}, 
+	{
+		"Table_Id": 109,
+		"Korean_String": "HMI 1 앞으로 가서 이를 클릭하세요",
+		"English_String": "Go to HMI 1 and Click it"
+	}, 
+	{
+		"Table_Id": 200,
+		"Korean_String": "인터렉션 가이드를 시작합니다. 본 훈련에서는 다양한 인터렉션을 실시합니다.",
+		"English_String": "Let's Start Process Interaction Guide That Interact"
+	}, 
+	{
+		"Table_Id": 201,
+		"Korean_String": "한 Task에서 두 개의 버튼 및 세 개의 딜레이버튼을 누를 수 있습니다.",
+		"English_String": "It's possible to click two Button and three DelayButton in Single Task"
+	}, 
+	{
+		"Table_Id": 202,
+		"Korean_String": "한 Task에서 두 개의 토글을 누를 수 있습니다.",
+		"English_String": "It's possible to click two Toggle in Single Task"
+	}, 
+	{
+		"Table_Id": 203,
+		"Korean_String": "한 Task에서 두 개의 그룹화된 토글 (라디오와 같음)을 누를 수 있습니다.",
+		"English_String": "It's possible to click two Grouped Toggle in Single Task"
+	}, 
+	{
+		"Table_Id": 204,
+		"Korean_String": "한 Task에서 두 개의 슬라이더를 드래그할 수 있습니다.",
+		"English_String": "It's possible to drag two Slider in Single Task"
+	}, 
+	{
+		"Table_Id": 205,
+		"Korean_String": "한 Task에서 두 개의 ClampedRotaryKnob을 여닫아보세요",
+		"English_String": "Open And Close ClampedRotaryKnob With Single Task"
+	}, 
+	{
+		"Table_Id": 206,
+		"Korean_String": "한 Task에서 두 개의 UnclampedRotaryKnob을 여닫아보세요",
+		"English_String": "Open And Close UnclampedRotaryKnob With Single Task"
+	}, 
+	{
+		"Table_Id": 207,
+		"Korean_String": "한 Task에서 두 개의 FixedRotaryKnob을 여닫아보세요",
+		"English_String": "Open And Close FixedRotaryKnob With Single Task"
+	}, 
+	{
+		"Table_Id": 208,
+		"Korean_String": "다양한 UI 컴포넌트 인터렉션을 해보세요.",
+		"English_String": "Do Interaction Various of UI Components"
+	}, 
+	{
+		"Table_Id": 209,
+		"Korean_String": "인터렉션 가이드를 마치겠습니다. 수고하셨습니다.",
+		"English_String": "This is the end of Interaction Guide. Thank you for your effort"
+	}, 
+	{
+		"Table_Id": 300,
+		"Korean_String": "오프셋 조정 가이드를 시작합니다.
+ 서버의 엔진 기능이 일부 대체됐음을 보여주기 위한 시나리오입니다.",
+		"English_String": "Let's start Offset Adjustment Guide
+ it's Scenario that purpose of show replaced engine function of Server"
+	}, 
+	{
+		"Table_Id": 301,
+		"Korean_String": "Vision Monitor의 'Length' 수치가 상한선 불량인 것을 확인하세요",
+		"English_String": "Check 'Length' value has Upper Defect"
+	}, 
+	{
+		"Table_Id": 302,
+		"Korean_String": "Notching HMI의 [Type B] 버튼을 누르고, [Length] 오른쪽의 0.000 버튼을 누르세요",
+		"English_String": "Click [Type B] Button of Notching HMI and Click 0.000 Button of Left side [Length]"
+	}, 
+	{
+		"Table_Id": 303,
+		"Korean_String": "Length' 값이 0.4만큼 상한선 불량이므로, 반대값 (-0.4)을 입력하시오",
+		"English_String": "Length' value Defect with difference of 0.4, input sided value -0.4"
+	}, 
+	{
+		"Table_Id": 304,
+		"Korean_String": "Length' 값이 정상 수치로 돌아오는 것을 확인하세요",
+		"English_String": "Check 'Length' value returns onto Normal"
+	}, 
+	{
+		"Table_Id": 305,
+		"Korean_String": "Shoulder Line' 수치가 하한선 불량인 것을 확인하세요",
+		"English_String": "Check 'Shoulder Line' value has Lower Defect"
+	}, 
+	{
+		"Table_Id": 306,
+		"Korean_String": "Notching HMI의 [Shoulder Line] 오른쪽의 0.000 버튼을 누르세요",
+		"English_String": "Click 0.000 Button Left of [Shoulder Line] of Notching HMI"
+	}, 
+	{
+		"Table_Id": 307,
+		"Korean_String": "Shoulder Line' 값이 -0.5만큼 하한선 불량이므로, 반대값 (540.7)을 입력하시오",
+		"English_String": "Shoulder Line' value Defect with difference of -0.5, input sided value (540.7)"
+	}, 
+	{
+		"Table_Id": 308,
+		"Korean_String": "Shoulder Line' 값이 정상 수치로 돌아오는 것을 확인하세요",
+		"English_String": "Check 'Shoulder Line' value returns onto Normal"
+	}, 
+	{
+		"Table_Id": 309,
+		"Korean_String": "오프셋 조정 가이드를 마칩니다.",
+		"English_String": "This is End of Offset Adjustment Guide."
+	} 
+]
