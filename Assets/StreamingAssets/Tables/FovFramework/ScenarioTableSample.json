@@ -529,5 +529,15 @@ Fade In Out"
 		"Localize_Table_Id": 208,
 		"Direct": "HL & INT",
 		"Uid": "ui_delaybutton_c"
+	}, 
+	{
+		"Mission_Type": "M_0_2",
+		"Record_Point": "o",
+		"First_Index": 4,
+		"Second_Index": 0,
+		"Localize_Table_Id": 209,
+		"Direct": "HL & INT",
+		"Uid": "ui_inputfield_a",
+		"Target_Value": "vts framework"
 	} 
 ]

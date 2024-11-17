@@ -13,7 +13,6 @@ namespace VTSFramework.TSModule
             Direct = Direct.ToInMissionText();
             Uid = Uid.ToInMissionText();
             Parameter = Parameter.ToInMissionText();
-            Target_Value = Target_Value.ToInMissionText();
 
             return this;
         }

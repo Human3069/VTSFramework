@@ -128,8 +128,8 @@ Fade In-Out, moving of camera, simple Interaction."
 	}, 
 	{
 		"Table_Id": 209,
-		"Korean_String": "인터렉션 가이드를 마치겠습니다. 수고하셨습니다.",
-		"English_String": "This is the end of Interaction Guide. Thank you for your effort"
+		"Korean_String": "입력 필드에 'vts framework' 라고 입력하세요.",
+		"English_String": "Input 'vts framework' on input field"
 	}, 
 	{
 		"Table_Id": 300,

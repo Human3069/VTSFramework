@@ -64,6 +64,11 @@ namespace VTSFramework.TSModule
                 delayButton.OnClickUpCompletelyEvent.AddListener(OnClickUp);
                 delayButton.OnClickUpCancelledEvent.AddListener(OnClickUp);
             }
+            else if (_interactable is _2DInputField)
+            {
+                _2DInputField inputField = _interactable as _2DInputField;
+                inputField.OnSelectEvent.AddListener(OnValueChanged);
+            }
         }
 
         protected virtual void OnHover(bool isOn)
@@ -97,8 +102,6 @@ namespace VTSFramework.TSModule
 
         protected virtual void OnValueChanged(bool isOn)
         {
-            Debug.Log(_interactable.gameObject.name + ", isOn : " + isOn);
-
             if (onImage != null)
             {
                 TransitionAsync(onImage, onTransitionDuration, isOn).Forget();

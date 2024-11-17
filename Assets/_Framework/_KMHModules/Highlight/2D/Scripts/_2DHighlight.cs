@@ -133,6 +133,11 @@ namespace VTSFramework.TSModule
         {
             UniTaskEx.Cancel(this, 0);
 
+            if (_data == null)
+            {
+                this._data = HighlightInMission._2DHighlightData;
+            }
+
             float halfOfDuration = _data.FlickeringDuration / 2f;
             foreach (Image highlightImage in highlightImageList)
             {
