@@ -1,7 +1,7 @@
 using Cysharp.Threading.Tasks;
+using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace VTSFramework.TSModule
 {
@@ -9,8 +9,7 @@ namespace VTSFramework.TSModule
     {
         protected TMP_InputField inputField;
 
-        [HideInInspector]
-        public UnityEvent<bool> OnSelectEvent;
+        public Action<bool> OnSelectAction;
 
         protected override void Awake()
         {
@@ -22,7 +21,7 @@ namespace VTSFramework.TSModule
             {
                 if (IsCurrentInteractable == true)
                 {
-                    OnSelectEvent.Invoke(true);
+                    OnSelectAction.Invoke(true);
                 }
                 else
                 {
@@ -34,7 +33,7 @@ namespace VTSFramework.TSModule
             inputField.onDeselect.AddListener(OnDeselect);
             void OnDeselect(string text)
             {
-                OnSelectEvent.Invoke(false);
+                OnSelectAction.Invoke(false);
             }
 
             inputField.interactable = false;
@@ -47,7 +46,8 @@ namespace VTSFramework.TSModule
             await UniTask.WaitUntil(PredicateFunc);
             bool PredicateFunc()
             {
-                return _targetValue.Equals(inputField.text) == true && inputField.isFocused == false;
+                return _targetValue.Equals(inputField.text) == true &&
+                       inputField.isFocused == false;
             }
 
             inputField.interactable = false;

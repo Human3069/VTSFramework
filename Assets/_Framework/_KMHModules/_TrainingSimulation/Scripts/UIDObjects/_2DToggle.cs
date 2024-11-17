@@ -19,8 +19,6 @@ namespace VTSFramework.TSModule
             {
                 if (_isOn != value)
                 {
-                    Debug.Log(this.gameObject.name + ", value : " + value);
-
                     _isOn = value;
                     OnValueChangedEvent.Invoke(value);
 

@@ -64,7 +64,12 @@ namespace VTSFramework.TSModule
             get
             {
                 bool isInteractable;
-                if (InteractionInMission.TargetUidList.Contains(UidObj.UidValue) == true)
+
+                if (UidObj == null)
+                {
+                    isInteractable = false;
+                }
+                else if (InteractionInMission.TargetUidList.Contains(UidObj.UidValue) == true)
                 {
                     isInteractable = IsInteractable == true;
                 }

@@ -47,8 +47,11 @@ namespace VTSFramework.TSModule
             }
             set
             {
-                _clickScale = value;
-                _interactable.transform.localScale = new Vector3(HoverScale * ClickScale, HoverScale * ClickScale, HoverScale * ClickScale);
+                if (Application.isPlaying == true)
+                {
+                    _clickScale = value;
+                    _interactable.transform.localScale = new Vector3(HoverScale * ClickScale, HoverScale * ClickScale, HoverScale * ClickScale);
+                }
             }
         }
 

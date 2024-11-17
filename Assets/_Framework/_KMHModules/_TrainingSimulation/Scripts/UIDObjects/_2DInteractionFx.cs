@@ -1,7 +1,6 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
-using Utilities;
 
 namespace VTSFramework.TSModule
 {
@@ -67,7 +66,7 @@ namespace VTSFramework.TSModule
             else if (_interactable is _2DInputField)
             {
                 _2DInputField inputField = _interactable as _2DInputField;
-                inputField.OnSelectEvent.AddListener(OnValueChanged);
+                inputField.OnSelectAction = OnValueChanged;
             }
         }
 

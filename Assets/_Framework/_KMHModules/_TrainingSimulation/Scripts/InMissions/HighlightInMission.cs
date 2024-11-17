@@ -1,5 +1,7 @@
 using Cysharp.Threading.Tasks;
+using NPOI.SS.Formula.Functions;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -31,26 +33,7 @@ namespace VTSFramework.TSModule
         public override async UniTask DoInMissionAsync(TaskRow row)
         {
             UIDObject uidObj = UIDManager.Instance.GetUIDObject(row.Uid);
-            if (uidObj._UidType == UIDObject.UidType._2D)
-            {
-                if (uidObj.TryGetComponent<_2DHighlight>(out _) == false)
-                {
-                    uidObj.AddComponent<_2DHighlight>();
-                }
-            }
-            else if (uidObj._UidType == UIDObject.UidType._3D)
-            {
-                if (uidObj.TryGetComponent<_3DHighlight>(out _) == false)
-                {
-                    uidObj.AddComponent<_3DHighlight>();
-                }
-            }
-            else
-            {
-                Debug.Assert(false);
-            }
-
-            IHighlight highlight = uidObj.GetComponent<IHighlight>();
+            IHighlight highlight = GetHighlight(uidObj);
 
             if (row.Direct.Contains("manual") == true)
             {
@@ -99,6 +82,36 @@ namespace VTSFramework.TSModule
             }
         }
 
+        public virtual void DoInMissionRecorded(string uid)
+        {
+            if (string.IsNullOrEmpty(uid) == false)
+            {
+                UIDObject uidObj = UIDManager.Instance.GetUIDObject(uid);
+                IHighlight highlight = GetHighlight(uidObj);
+
+                if (highlightingList.Contains(highlight) == false)
+                {
+                    highlightingList.Add(highlight);
+                }
+
+                foreach (IHighlight currentHighlight in highlightingList)
+                {
+                    if (highlightingList.Contains(currentHighlight) == false)
+                    {
+                        currentHighlight.DisableAsync();
+                    }
+                }
+            }
+            else
+            {
+                foreach (IHighlight currentHighlight in highlightingList)
+                {
+                    currentHighlight.DisableAsync();
+                }
+                highlightingList.Clear();
+            }
+        }
+
         public virtual void DisableHighlight(UIDObject uidObj)
         {
             IHighlight highlight = uidObj.GetComponent<IHighlight>();
@@ -108,6 +121,31 @@ namespace VTSFramework.TSModule
                 highlight.DisableAsync();
                 highlightingList.Remove(highlight);
             }
+        }
+
+        protected virtual IHighlight GetHighlight(UIDObject uidObj)
+        {
+            if (uidObj._UidType == UIDObject.UidType._2D)
+            {
+                if (uidObj.TryGetComponent<_2DHighlight>(out _) == false)
+                {
+                    uidObj.AddComponent<_2DHighlight>();
+                }
+            }
+            else if (uidObj._UidType == UIDObject.UidType._3D)
+            {
+                if (uidObj.TryGetComponent<_3DHighlight>(out _) == false)
+                {
+                    uidObj.AddComponent<_3DHighlight>();
+                }
+            }
+            else
+            {
+                Debug.Assert(false);
+            }
+
+            IHighlight highlight = uidObj.GetComponent<IHighlight>();
+            return highlight;
         }
     }
 }

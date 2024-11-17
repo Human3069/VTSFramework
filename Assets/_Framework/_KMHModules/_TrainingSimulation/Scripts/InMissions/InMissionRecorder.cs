@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace VTSFramework.TSModule
@@ -13,12 +14,14 @@ namespace VTSFramework.TSModule
 
         protected InteractionInMission interactionInMission;
         protected CameraInMission cameraInMission;
+        protected HighlightInMission highlightInMission;
         protected PopupInMission popupInMission;
 
         public virtual void Initialize()
         {
             interactionInMission = this.GetComponentInChildren<InteractionInMission>();
             cameraInMission = this.GetComponentInChildren<CameraInMission>();
+            highlightInMission = this.GetComponentInChildren<HighlightInMission>();
             popupInMission = this.GetComponentInChildren<PopupInMission>();
 
             List<TaskRow> rowList = VTSManager.Instance.ScenarioTable.GetSortedList();
@@ -29,12 +32,12 @@ namespace VTSFramework.TSModule
                 if (inMissionRecordList.Count == 0)
                 {
                     // 첫 번째 레코드를 생성할 땐 TaskRow를 기준으로 할당 (생성자 오버로딩)
-                    inMissionRecordList.Add(new InMissionRecord(row, interactionInMission, cameraInMission, popupInMission));
+                    inMissionRecordList.Add(new InMissionRecord(row, interactionInMission, cameraInMission, highlightInMission, popupInMission));
                 }
                 else
                 {
                     // 두 번째 이상의 레코드를 생성할 땐 직전 인덱스의 레코드 및 TaskRow를 기준으로 할당 (생성자 오버로딩)
-                    inMissionRecordList.Add(new InMissionRecord(inMissionRecordList[inMissionRecordList.Count - 1], row, interactionInMission, cameraInMission, popupInMission));
+                    inMissionRecordList.Add(new InMissionRecord(inMissionRecordList[inMissionRecordList.Count - 1], row, interactionInMission, cameraInMission, highlightInMission, popupInMission));
                 }
             }
 
@@ -81,16 +84,7 @@ namespace VTSFramework.TSModule
             else
             {
                 edgeRecord = currentRecordList[0];
-                startIndex = inMissionRecordList.IndexOf(edgeRecord) - 1;
-                if (startIndex == -1)
-                {
-                    firstIndex = currentFirstIndex;
-                    secondIndex = currentSecondIndex;
-
-                    return;
-                }
-
-                endIndex = inMissionRecordList.FindLastIndex(startIndex, record => record.HasRecordPoint == true);
+                endIndex = inMissionRecordList.IndexOf(edgeRecord) - 1;
                 if (endIndex == -1)
                 {
                     firstIndex = currentFirstIndex;
@@ -98,13 +92,30 @@ namespace VTSFramework.TSModule
 
                     return;
                 }
+
+                startIndex = inMissionRecordList.FindLastIndex(endIndex, record => record.HasRecordPoint == true);
+                if (startIndex == -1)
+                {
+                    firstIndex = currentFirstIndex;
+                    secondIndex = currentSecondIndex;
+
+                    return;
+                }
             }
 
-            List<InMissionRecord> targetRecordList = inMissionRecordList.GetRange(startIndex, startIndex - endIndex + 1);
-            foreach (InMissionRecord record in targetRecordList)
+            List<InMissionRecord> targetRecordList = inMissionRecordList.GetRange(startIndex, endIndex - startIndex + 1);
+            InMissionRecord record;
+            if (isAscending == true)
             {
-                cameraInMission.DoInMissionRecorded(record.CamPointUid);
+                record = targetRecordList[targetRecordList.Count - 1];
             }
+            else
+            {
+                record = targetRecordList[0];
+            }
+            cameraInMission.DoInMissionRecorded(record.CamPointUid);
+            highlightInMission.DoInMissionRecorded(record.ManualHighlightUid);
+            popupInMission.DoInMissionRecorded(record.ManualPopupUid);
 
             firstIndex = inMissionRecordList[endIndex].FirstIndex;
             secondIndex = inMissionRecordList[endIndex].SecondIndex;
@@ -114,7 +125,7 @@ namespace VTSFramework.TSModule
     [System.Serializable]
     public class InMissionRecord
     {
-        public InMissionRecord(TaskRow row, InteractionInMission interaction, CameraInMission camera, PopupInMission popup)
+        public InMissionRecord(TaskRow row, InteractionInMission interaction, CameraInMission camera, HighlightInMission highlight, PopupInMission popup)
         {
             this.Previous = null;
 
@@ -140,6 +151,23 @@ namespace VTSFramework.TSModule
                 this.CamPointUid = InMissionHandler.StartData.GetStartPoint().UidValue;
             }
 
+            if (highlight.IsDirectContains(row.Direct) == true &&
+                row.Direct.Contains("manual") == true)
+            {
+                if (row.Parameter.Contains("on") == true)
+                {
+                    this.ManualHighlightUid = row.Uid;
+                }
+                else
+                {
+                    this.ManualHighlightUid = "";
+                }
+            }
+            else
+            {
+                this.ManualHighlightUid = "";
+            }
+
             if (popup.IsDirectContains(row.Direct) == true &&
                 row.Direct.Contains("manual") == true)
             {
@@ -158,13 +186,19 @@ namespace VTSFramework.TSModule
             }
         }
 
-        public InMissionRecord(InMissionRecord prevRecord, TaskRow row, InteractionInMission interaction, CameraInMission camera, PopupInMission popup) : this(row, interaction, camera, popup)
+        public InMissionRecord(InMissionRecord prevRecord, TaskRow row, InteractionInMission interaction, CameraInMission camera, HighlightInMission highlight, PopupInMission popup)
+        : this(row, interaction, camera, highlight, popup)
         {
             this.Previous = prevRecord;
 
             if (camera.IsDirectContains(row.Direct) == false)
             {
                 this.CamPointUid = Previous.CamPointUid;
+            }
+
+            if (highlight.IsDirectContains(row.Direct) == false)
+            {
+                this.ManualHighlightUid = Previous.ManualHighlightUid;
             }
 
             if (popup.IsDirectContains(row.Direct) == false)
@@ -190,6 +224,8 @@ namespace VTSFramework.TSModule
         public string InteractedUid;
         [ReadOnly]
         public string CamPointUid;
+        [ReadOnly]
+        public string ManualHighlightUid;
         [ReadOnly]
         public string ManualPopupUid;
     }

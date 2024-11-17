@@ -2247,9 +2247,6 @@ MonoBehaviour:
   OnHoverEvent:
     m_PersistentCalls:
       m_Calls: []
-  OnSelectEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &207391378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2746,7 +2743,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   languageType: 0
-  missionType: 2
+  missionType: 1
 --- !u!114 &254754267
 MonoBehaviour:
   m_ObjectHideFlags: 0

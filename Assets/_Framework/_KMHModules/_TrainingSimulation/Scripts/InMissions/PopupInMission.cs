@@ -1,8 +1,8 @@
 using Cysharp.Threading.Tasks;
 using GoogleSheetsToUnity;
+using NPOI.SS.Formula.Functions;
 using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace VTSFramework.TSModule
@@ -10,8 +10,6 @@ namespace VTSFramework.TSModule
     public class PopupInMission : BaseInMission
     {
         // private const string LOG_FORMAT = "<color=white><b>[PopupInMission]</b></color> {0}";
-      
-        protected List<UI_InMissionPopup> popupList = new List<UI_InMissionPopup>();
 
         [Header("=== PopupInMission ===")]
         [SerializeField]
@@ -22,6 +20,9 @@ namespace VTSFramework.TSModule
         [Space(10)]
         [SerializeField]
         protected UI_InMissionPopup[] inMissionPopupConfigs;
+        [ReadOnly]
+        [SerializeField]
+        protected List<UI_InMissionPopup> popupList = new List<UI_InMissionPopup>();
 
         protected override void Awake()
         {
@@ -62,7 +63,22 @@ namespace VTSFramework.TSModule
                 Debug.Assert(row.Parameter.Equals("on") == true || row.Parameter.Equals("off") == true);
 
                 popup._InMissionType = InMissionType.Manual;
-                popup.gameObject.SetActive(row.Parameter.Equals("on") == true);
+                if (row.Parameter.Equals("on") == true)
+                {
+                    popup.gameObject.SetActive(true);
+                    if (popupList.Contains(popup) == false)
+                    {
+                        popupList.Add(popup);
+                    }
+                }
+                else
+                {
+                    popup.gameObject.SetActive(false);
+                    if (popupList.Contains(popup) == true)
+                    {
+                        popupList.Remove(popup);
+                    }
+                }
 
                 float duration;
                 if (row.Parameter.Equals("on") == true)
@@ -81,12 +97,37 @@ namespace VTSFramework.TSModule
                 popup._InMissionType = InMissionType.Auto;
                 popup.gameObject.SetActive(true);
 
+                if (popupList.Contains(popup) == false)
+                {
+                    popupList.Add(popup);
+                }
+
                 await UniTask.WaitForSeconds(popupShowDuration);
             }
+        }
 
-            if (popupList.Contains(popup) == false)
+        public virtual void DoInMissionRecorded(string uid)
+        {
+            Debug.Log(nameof(DoInMissionRecorded) + ", uid : " + uid);
+
+            if (string.IsNullOrEmpty(uid) == false)
             {
-                popupList.Add(popup);
+                UIDObject uidObj = UIDManager.Instance.GetUIDObject(uid);
+                UI_InMissionPopup popup = uidObj.GetComponent<UI_InMissionPopup>();
+                popup.gameObject.SetActive(true);
+
+                if (popupList.Contains(popup) == false)
+                {
+                    popupList.Add(popup);
+                }
+            }
+            else
+            {
+                foreach (UI_InMissionPopup currentPopup in popupList)
+                {
+                    currentPopup.gameObject.SetActive(false);
+                }
+                popupList.Clear();
             }
         }
 
