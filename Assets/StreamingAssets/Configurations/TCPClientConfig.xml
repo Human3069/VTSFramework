@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TCPClientConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<ServerIPAddress>221.140.97.131</ServerIPAddress>
+	<ServerPortNumber>1967</ServerPortNumber>
+	
+</TCPClientConfig>

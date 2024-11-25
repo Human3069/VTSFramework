@@ -27,6 +27,11 @@ namespace _KMH_Framework._TS_Module
             return $"<color=#{ColorUtility.ToHtmlStringRGB(color)}>{text}</color>";
         }
 
+        public static string ToHtmlString(this Color color)
+        {
+            return ColorUtility.ToHtmlStringRGB(color);
+        }
+
         public static bool IsValueDigit(this string value)
         {
             return Regex.IsMatch(value, @"^[-+]?\d*\.?\d+$");

@@ -3,12 +3,11 @@ using System.IO;
 using System.Xml.Serialization;
 using UnityEngine;
 
-namespace VTSFramework.TSModule
+namespace _KMH_Framework
 {
     public class ConfigurationReader : MonoBehaviour
     {
         private const string LOG_FORMAT = "<color=white><b>[ConfigurationReader]</b></color> {0}";
-        private const string CONFIG_LOCAL_PATH = "/Configurations/ClientConfiguration.xml";
 
         protected static ConfigurationReader _instance;
         public static ConfigurationReader Instance
@@ -23,8 +22,9 @@ namespace VTSFramework.TSModule
             }
         }
 
-        [ReadOnly]
-        public ClientConfiguration ClientConfig;
+        public ConfigurationHandler<UserConfig> UserConfigHandler;
+        public ConfigurationHandler<TCPClientConfig> TCPClientConfigHandler;
+        public ConfigurationHandler<DatabaseConfig> DatabaseConfigHandler;
 
         protected bool isXMLReadDone = false;
 
@@ -52,27 +52,10 @@ namespace VTSFramework.TSModule
                 return;
             }
 
-            PostAwake().Forget();
-        }
+            UserConfigHandler.Read();
+            TCPClientConfigHandler.Read();
+            DatabaseConfigHandler.Read();
 
-        protected async UniTaskVoid PostAwake()
-        {
-            string fullPath = Application.streamingAssetsPath + CONFIG_LOCAL_PATH;
-            if (File.Exists(fullPath) == false)
-            {
-                Debug.LogErrorFormat(LOG_FORMAT, "fullPath : " + CONFIG_LOCAL_PATH + " Not Exist File!");
-
-                return;
-            }
-
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(ClientConfiguration));
-            StreamReader _streamReader = new StreamReader(fullPath);
-
-            await UniTask.WaitUntil(delegate { return VTSManager.Instance != null; });
-            ClientConfig = (ClientConfiguration)xmlSerializer.Deserialize(_streamReader.BaseStream);
-            ClientConfig = ClientConfig.Parsed();
-
-            _streamReader.Close();
             isXMLReadDone = true;
         }
 

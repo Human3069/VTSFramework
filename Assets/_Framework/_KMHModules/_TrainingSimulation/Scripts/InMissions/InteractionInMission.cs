@@ -1,3 +1,4 @@
+using _KMH_Framework;
 using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,8 +34,8 @@ namespace VTSFramework.TSModule
             await UniTask.WaitWhile(() => ConfigurationReader.Instance == null);
             await ConfigurationReader.Instance.WaitUntilReady();
 
-            float maxDistance = ConfigurationReader.Instance.ClientConfig.MaxInteractableDistance;
-            bool isRaycastAll = ConfigurationReader.Instance.ClientConfig.IsRaycastAll;
+            float maxDistance = ConfigurationReader.Instance.UserConfigHandler.Result.MaxInteractableDistance;
+            bool isRaycastAll = ConfigurationReader.Instance.UserConfigHandler.Result.IsRaycastAll;
 
             List<_3DInteractable> currentHoverList = new List<_3DInteractable>();
 
@@ -187,6 +188,7 @@ namespace VTSFramework.TSModule
 #endif
         }
 
+#if UNITY_EDITOR
         protected virtual void OnDrawGizmos()
         {
             Gizmos.color = new Color(0f, 1f, 0f, 0.25f);
@@ -197,5 +199,6 @@ namespace VTSFramework.TSModule
 
             EDITOR_hitPointList.Clear();
         }
+#endif
     }
 }

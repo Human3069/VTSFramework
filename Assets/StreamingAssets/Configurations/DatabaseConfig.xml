@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DatabaseConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<IPAddress>127.0.0.1</IPAddress>
+	<UserID>root</UserID>
+	<UserPassword>Welcome1!</UserPassword>
+	<CharSet>utf8mb4</CharSet>
+
+	<DatabaseName>vts_framework</DatabaseName>
+	
+</DatabaseConfig>

@@ -1,3 +1,4 @@
+using _KMH_Framework;
 using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
 using UnityEngine;
@@ -206,7 +207,7 @@ namespace VTSFramework.TSModule
         protected virtual async UniTaskVoid RunAsync()
         {
             IsNextButtonClickable = false;
-            float delayBetweenStep = ConfigurationReader.Instance.ClientConfig.DelayBetweenStep;
+            float delayBetweenStep = ConfigurationReader.Instance.UserConfigHandler.Result.DelayBetweenStep;
 
             while (true)
             {

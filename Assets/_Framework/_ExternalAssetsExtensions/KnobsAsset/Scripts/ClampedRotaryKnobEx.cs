@@ -163,6 +163,7 @@ namespace _KMH_Framework
             _handle.localEulerAngles = Vector3.up * rotatedAngle;
         }
 
+#if UNITY_EDITOR
         private void OnDrawGizmos()
         {
             Vector3 startAngle = Quaternion.AngleAxis(minAngle, this.transform.up) * this.transform.forward;
@@ -200,5 +201,6 @@ namespace _KMH_Framework
             Handles.color = Color.green;
             Handles.DrawLine(this.transform.position, this.transform.position + (endAngle * radius));
         }
+#endif
     }
 }

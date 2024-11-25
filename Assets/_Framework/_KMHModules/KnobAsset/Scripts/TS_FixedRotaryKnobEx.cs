@@ -309,6 +309,7 @@ namespace VTSFramework.TSModule
             // Fixed Knob은 normalized를 지원하지 않습니다.
         }
 
+#if UNITY_EDITOR
         protected virtual void OnDrawGizmos()
         {
             Handles.color = Color.yellow;
@@ -323,5 +324,6 @@ namespace VTSFramework.TSModule
             Vector3 currentAngle = Quaternion.AngleAxis(fixedAngleList[TargetAngleListIndex], this.transform.up) * this.transform.forward;
             Handles.DrawLine(this.transform.position, this.transform.position + (currentAngle * 1.25f));
         }
+#endif
     }
 }

@@ -148,6 +148,7 @@ namespace VTSFramework.TSModule
         }
     }
 
+#if UNITY_EDITOR
     [CustomEditor(typeof(_3DDelayButton))]
     [CanEditMultipleObjects]
     public class _3DDelayButtonEditor : Editor
@@ -229,4 +230,5 @@ namespace VTSFramework.TSModule
             serializedObject.ApplyModifiedProperties();
         }
     }
+#endif
 }

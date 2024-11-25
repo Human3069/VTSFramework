@@ -6,6 +6,7 @@ using DrawIfExtension;
 
 namespace com.ctn_originals.unity_drawif_attributes.Editor
 {
+#if UNITY_EDITOR
     [CustomPropertyDrawer(typeof(DrawIfAttribute))]
     public class DrawIfPropertyDrawer : PropertyDrawer
     {
@@ -66,4 +67,5 @@ namespace com.ctn_originals.unity_drawif_attributes.Editor
             }
         }
     }
+#endif
 }

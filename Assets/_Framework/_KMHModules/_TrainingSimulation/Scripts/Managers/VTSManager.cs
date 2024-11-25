@@ -1,3 +1,4 @@
+using _KMH_Framework;
 using Cysharp.Threading.Tasks;
 using System;
 using System.Collections;
@@ -113,7 +114,7 @@ namespace VTSFramework.TSModule
             await UniTask.WaitWhile(() => ConfigurationReader.Instance == null);
             await ConfigurationReader.Instance.WaitUntilReady();
 
-            if (ConfigurationReader.Instance.ClientConfig.IsUseCheat == true)
+            if (ConfigurationReader.Instance.UserConfigHandler.Result.IsUseCheat == true)
             {
                 while (true)
                 {

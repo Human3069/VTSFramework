@@ -18,6 +18,7 @@ namespace VTSFramework.TSModule
         }
     }
 
+#if UNITY_EDITOR
     public static class EditorGUILayoutEx
     {
         public static void PropertyFieldWithDisabled(SerializedProperty property)
@@ -27,6 +28,7 @@ namespace VTSFramework.TSModule
             EditorGUI.EndDisabledGroup();
         }
     }
+#endif
 
     public static class CameraEx
     {

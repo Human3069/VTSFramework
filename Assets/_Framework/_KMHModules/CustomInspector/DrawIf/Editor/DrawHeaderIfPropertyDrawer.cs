@@ -5,6 +5,7 @@ using Utilities;
 
 namespace com.ctn_originals.unity_drawif_attributes.Editor
 {
+#if UNITY_EDITOR
 	[CustomPropertyDrawer(typeof(DrawHeaderIfAttribute))]
 	public class DrawHeaderIfPropertyDrawer : PropertyDrawer
 	{
@@ -49,4 +50,5 @@ namespace com.ctn_originals.unity_drawif_attributes.Editor
 			}
 		}
 	}
+#endif
 }

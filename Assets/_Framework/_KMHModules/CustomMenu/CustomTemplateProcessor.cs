@@ -1,5 +1,6 @@
 using UnityEngine;
 
+#if UNITY_EDITOR
 public class CustomTemplateProcessor : UnityEditor.AssetModificationProcessor
 {
     // call on create new asset
@@ -31,3 +32,4 @@ public class CustomTemplateProcessor : UnityEditor.AssetModificationProcessor
         UnityEditor.AssetDatabase.Refresh();
     }
 }
+#endif

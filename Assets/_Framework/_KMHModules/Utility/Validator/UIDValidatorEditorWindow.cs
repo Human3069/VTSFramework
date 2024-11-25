@@ -8,6 +8,7 @@ using VTSFramework.TSModule;
 
 namespace GoogleSheetsToUnity
 {
+#if UNITY_EDITOR
     public class UIDValidatorEditorWindow : EditorWindow
     {
         private static string LOG_FORMAT = "<color=#37AFB6><b>[UIDValidatorEditorWindow]</b></color> {0}";
@@ -368,4 +369,5 @@ namespace GoogleSheetsToUnity
             }
         }
     }
+#endif
 }

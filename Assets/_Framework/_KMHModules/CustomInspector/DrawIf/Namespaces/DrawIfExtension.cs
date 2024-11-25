@@ -14,6 +14,7 @@ namespace DrawIfExtension {
 		//	public static object coparedValue;
 		//}
 
+#if UNITY_EDITOR
 		public static bool DrawIfConditionCheck(UnityEditor.SerializedProperty property, UnityEditor.SerializedProperty conparedField, object comparedFieldValue, object comparedValue, ComparisonType comparisonType) {
 			bool conditionMet = false;
 
@@ -70,5 +71,6 @@ namespace DrawIfExtension {
 
 			return conditionMet;
 		}
-	}
+#endif
+    }
 }

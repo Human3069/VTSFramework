@@ -1,8 +1,10 @@
-using Cysharp.Threading.Tasks;
 using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using System.Text;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace _KMH_Framework
 {
@@ -136,5 +138,118 @@ namespace _KMH_Framework
 
             return absLimit > difference;
         }
+
+        public static string ToEncryptAES(this string originalText, string key)
+        {
+            RijndaelManaged rijndaelCipher = GetRijndaelCipher(key);
+            byte[] textBytes = Encoding.UTF8.GetBytes(originalText);
+
+            string encrypted = Convert.ToBase64String(rijndaelCipher.CreateEncryptor().TransformFinalBlock(textBytes, 0, textBytes.Length));
+            return encrypted;
+        }
+
+        public static string ToDecryptAES(this string targetText, string key)
+        {
+            RijndaelManaged rijndaelCipher = GetRijndaelCipher(key);
+            byte[] encryptedData = Convert.FromBase64String(targetText);
+            byte[] decryptedAsBytes = rijndaelCipher.CreateDecryptor().TransformFinalBlock(encryptedData, 0, encryptedData.Length);
+
+            return Encoding.UTF8.GetString(decryptedAsBytes);
+        }
+
+        private static RijndaelManaged GetRijndaelCipher(string key)
+        {
+            byte[] passwordBytes = Encoding.UTF8.GetBytes(key);
+            byte[] keyBytes = new byte[16];
+
+            int _length = passwordBytes.Length;
+            if (_length > keyBytes.Length)
+            {
+                _length = keyBytes.Length;
+            }
+            Array.Copy(passwordBytes, keyBytes, _length);
+
+            return new RijndaelManaged
+            {
+                Mode = CipherMode.CBC,
+                Padding = PaddingMode.PKCS7,
+                KeySize = 128,
+                BlockSize = 128,
+                Key = keyBytes,
+                IV = keyBytes
+            };
+        }
+    }
+
+    // UI 기본적인 요구사항 중 Tab 누르면 다음 Selectable로 전환되는 요구가 많습니다.
+    // 그걸 구현하려고 만든것입니다.
+    public class SelectionCircleChain : IDisposable
+    {
+        private List<CirclePair> circlePairList;
+
+        public GameObject CurrentObj
+        {
+            get
+            {
+                return EventSystem.current.currentSelectedGameObject;
+            }
+        }
+
+        public SelectionCircleChain(params Selectable[] selectables)
+        {
+            Debug.Assert(selectables.Length > 1);
+
+            circlePairList = new List<CirclePair>();
+            for (int i = 0; i < selectables.Length; i++)
+            {
+                circlePairList.Add(new CirclePair());
+            }
+
+            for (int i = 0; i < selectables.Length; i++)
+            {
+                if (i == 0)
+                {
+                    circlePairList[0]._Selectable = selectables[0];
+                    circlePairList[0].Next = circlePairList[1];
+
+                    circlePairList[0]._Selectable.Select();
+                }
+                else if (i == selectables.Length - 1)
+                {
+                    circlePairList[selectables.Length - 1]._Selectable = selectables[selectables.Length - 1];
+                    circlePairList[selectables.Length - 1].Next = circlePairList[0];
+                }
+                else
+                {
+                    circlePairList[i]._Selectable = selectables[i];
+                    circlePairList[i].Next = circlePairList[i + 1];
+                }
+            }
+        }
+
+        public void MoveNext()
+        {
+            GameObject selectedObj = EventSystem.current.currentSelectedGameObject;
+            foreach (CirclePair pair in circlePairList)
+            {
+                if (pair._Selectable.gameObject == selectedObj)
+                {
+                    pair.Next._Selectable.Select();
+                    break;
+                }
+            }
+        }
+
+        public void Dispose()
+        {
+            circlePairList.Clear();
+            circlePairList = null;
+        }
+    }
+
+    public class CirclePair
+    {
+        public Selectable _Selectable;
+        public CirclePair Next;
     }
 }
